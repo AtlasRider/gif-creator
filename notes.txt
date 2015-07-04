@@ -1,0 +1,18 @@
+gif conversion notes
+
+	sips -s format gif DSC02580.JPG --out 1.gif
+
+
+
+1 Resize to 640
+
+	sips -Z 640 *.JPG
+
+2 Convert frames to GIF
+
+	for i in *.JPG; do sips -s format gif $i --out $i.gif;rm $i;done
+
+3 Convert to GIF animation
+
+	gifsicle --delay 15 --loopcount=forever DSC02580.JPG.gif DSC02581.JPG.gif DSC02582.JPG.gif DSC02583.JPG.gif DSC02584.JPG.gif > anim.gif
+ 
